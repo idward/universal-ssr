@@ -1,6 +1,6 @@
 import {
   BrowserModule,
-  BrowserTransferStateModule
+  BrowserTransferStateModule,
 } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -26,8 +26,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { CoursesService } from './services/courses.service';
-import { CourseResolver } from './services/course.resolver';
 import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -49,6 +47,7 @@ import { AppShellRenderDirective } from './directives/appShellRender';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
+    BrowserTransferStateModule,
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
@@ -70,7 +69,7 @@ import { AppShellRenderDirective } from './directives/appShellRender';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [CoursesService, CourseResolver],
+  providers: [],
   bootstrap: [AppComponent],
   entryComponents: [CourseDialogComponent]
 })
