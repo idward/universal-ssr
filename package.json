@@ -7,12 +7,15 @@
     "start": "ng serve",
     "build:client-app:prod": "ng build --prod",
     "build:server-app:prod": "ng run angular-universal-course:server",
-    "build-all": "npm-run-all build:client-app:prod build:server-app:prod build:functions",
+    "build-all": "npm-run-all build:client-app:prod build:server-app:prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prerender": "ts-node -P ./server.tsconfig.json ./prerender.ts",
+    "prerender:backup": "ts-node -P ./server.tsconfig.json ./prerender.ts",
     "prerender:debug": "ts-node -P ./server.tsconfig.json --inspect ./prerender.ts",
+    "server": "node -r ts-node/register ./server.ts",
+    "server:watch": "nodemon",
     "start:express-server": "ts-node -P ./server.tsconfig.json ./server.ts",
     "build:functions": "cd functions && npm run build",
     "move-index": "mv ./dist/index.html ./functions/lib/index-server.html",
@@ -42,6 +45,7 @@
     "hammerjs": "^2.0.8",
     "moment": "^2.22.2",
     "rxjs": "6.5.2",
+    "selenium-webdriver": "^4.0.0-alpha.4",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
@@ -66,7 +70,8 @@
     "npm-run-all": "^4.1.2",
     "protractor": "^6.0.0",
     "ts-node": "~3.2.0",
-    "tslint": "~5.7.0",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "tslint": "^5.7.0",
     "typescript": "~3.4.5"
   }
 }
